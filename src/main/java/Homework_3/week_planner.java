@@ -37,9 +37,47 @@ public class week_planner {
         System.out.println("Please, input the day of the week: ");
 
         String day;
+        String task;
 
         while(true){
+
             day = scan.nextLine();
+
+            /**
+             * Advanced part begins here...
+             */
+
+            if(day.equals("change sunday".toLowerCase())){
+                System.out.println("Enter new tasks: ");
+                task = scan.nextLine();
+                schedule[0][1] += ", " +  task;
+            } else if(day.equals("change monday".toLowerCase())){
+                System.out.println("Enter new tasks: ");
+                task = scan.nextLine();
+                schedule[1][1] += ", " +  task;
+            } else if(day.equals("change tuesday".toLowerCase())){
+                System.out.println("Enter new tasks: ");
+                task = scan.nextLine();
+                schedule[2][1] += ", " +  task;
+            } else if(day.equals("change wednesday".toLowerCase())){
+                System.out.println("Enter new tasks: ");
+                task = scan.nextLine();
+                schedule[3][1] += ", " +  task;
+            } else if(day.equals("change thursday".toLowerCase())){
+                System.out.println("Enter new tasks: ");
+                task = scan.nextLine();
+                schedule[4][1] += ", " +  task;
+            } else if(day.equals("change friday".toLowerCase())){
+                System.out.println("Enter new tasks: ");
+                task = scan.nextLine();
+                schedule[5][1] += ", " +  task;
+            } else if (day.equals("change saturday".toLowerCase())){
+                System.out.println("Enter new tasks: ");
+                task = scan.nextLine();
+                schedule[6][1] += ", " +  task;
+            }
+
+
 
             switch (day.toLowerCase()) {
                 case "monday":
@@ -64,7 +102,14 @@ public class week_planner {
                     System.out.println("Your tasks for Sunday: " + schedule[0][1]);
                     break;
                     default:
-                        System.out.println("Sorry, I don't understand you, please try again.");
+                        if(day.equals("change monday") || day.equals("change sunday") || day.equals("change thursday") || day.equals("change tuesday") || day.equals("change wednesday") || day.equals("change friday") || day.equals("change saturday")){
+                            System.out.println("Changes Added");
+                        } else if (day.equals("exit".toLowerCase())) {
+                            System.out.println("bye bye, see yaaa...");
+                        } else {
+                            System.out.println("Sorry, I don't understand you, please try again.");
+                            System.out.println("Tip: Check your Spelling, please...");
+                        }
             }
 
             if (day.equals("exit".toLowerCase())) {
@@ -73,6 +118,8 @@ public class week_planner {
 
 
             System.out.println("Please, input the day of the week: ");
+
+
 
         }
 
