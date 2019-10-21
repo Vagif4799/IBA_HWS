@@ -10,7 +10,7 @@ import java.util.*;
  *
  */
 
-public class areaShooting {
+public class AreaShooting {
     public static void main(String[] args) {
 
         Scanner scan = new Scanner(System.in);

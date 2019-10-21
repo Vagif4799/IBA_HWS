@@ -3,7 +3,7 @@ package homework3;
 import java.util.*;
 import java.lang.*;
 
-public class weekPlanner {
+public class WeekPlanner {
 
     public static void main(String[] args) {
 
