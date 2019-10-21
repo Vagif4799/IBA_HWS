@@ -23,7 +23,6 @@ public class Numbers {
 
         int[] enteredNumbers = new int [100];
         int i = 0;
-
         while (true) {
             enteredNumber = scan.nextInt();
             enteredNumbers[i] = enteredNumber;

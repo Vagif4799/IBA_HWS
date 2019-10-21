@@ -1,9 +1,9 @@
-package Homework_3;
+package homework3;
 
 import java.util.*;
 import java.lang.*;
 
-public class week_planner {
+public class weekPlanner {
 
     public static void main(String[] args) {
 
