@@ -26,6 +26,25 @@ public class stringGenerator {
 
         System.out.println(word);
 
+
+
+    }
+
+
+    public boolean test (String word, int specificNumber) {
+        if (word == null) {
+            return false;
+        }
+
+        for (int i=0; i<word.length(); i++) {
+            if(!Character.isAlphabetic(word.charAt(i))) {
+                return false;
+            }
+        }
+        if (word.length() != specificNumber) {
+            return false;
+        }
+        else return true;
     }
 
 
