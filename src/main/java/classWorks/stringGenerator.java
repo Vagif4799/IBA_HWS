@@ -20,9 +20,13 @@ public class stringGenerator {
         Random random = new Random();
         String word = "";
         for (int i = 0; i < length; i++) {
-            int randomLimitedInt = down + (int)
-                    (random.nextFloat() * (up - down + 1));
-            word += ((char) randomLimitedInt);
+            int randomLimitedInt = down + (int) (random.nextFloat() * (up - down + 1));
+            boolean a = random.nextBoolean();
+            if(a) {
+                word += (Character.toUpperCase((char) randomLimitedInt) );
+            } else {
+                word += (((char) randomLimitedInt));
+            }
         }
         String result = word.toString();
 
@@ -31,21 +35,32 @@ public class stringGenerator {
     }
 
 
-    public boolean test (String word, int specificNumber) {
-        if (word == null) {
-            return false;
+
+    public String capitalVowels (String x) {
+
+        String rcv = "";
+        String rcc = "";
+        String rsc = "";
+        String rsv = "";
+
+        for (int i=0; i<x.length(); i++) {
+            if(x.charAt(i) == 'A' || x.charAt(i) == 'E' || x.charAt(i) == 'I' || x.charAt(i) == 'O' || x.charAt(i) == 'U'){
+                rcv+=x.charAt(i);
+            } else if (x.charAt(i) == 'Z' || x.charAt(i) == 'B' || x.charAt(i) == 'T' || x.charAt(i) == 'G' || x.charAt(i) == 'H'){
+                rcc+=x.charAt(i);
+            } else if (x.charAt(i) == 'z' || x.charAt(i) == 'b' || x.charAt(i) == 't' || x.charAt(i) == 'g' || x.charAt(i) == 'h') {
+                rsc+=x.charAt(i);
+            } else rsv += x.charAt(i);
         }
 
-        for (int i=0; i<word.length(); i++) {
-            if(!Character.isAlphabetic(word.charAt(i))) {
-                return false;
-            }
-        }
-        if (word.length() != specificNumber) {
-            return false;
-        }
-        else return true;
+        return rcv;
     }
 
 
+
+
+
+
 }
+
+

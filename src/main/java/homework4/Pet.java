@@ -13,7 +13,7 @@ public class Pet {
     }
 
     public void respond () {
-        System.out.printf("Hello owner. I am " + this.nickname + " I miss you!");
+        System.out.println("Hello owner. I am " + this.nickname + " I miss you!");
     }
 
     public void foul () {
@@ -39,6 +39,12 @@ public class Pet {
     public String[] getHabits() {
         return habits;
     }
+
+
+    public String toString() {
+        return getSpecies() + "{nickname= " + getNickname() + ", age= " + getAge() + ", trickLevel= " + getTrickLevel() + ", habits= " + getHabits() + "}";
+    }
+
 
     public Pet(String species, String nickname) {
         this.species = species;

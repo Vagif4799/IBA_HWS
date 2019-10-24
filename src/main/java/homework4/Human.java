@@ -1,5 +1,6 @@
 package homework4;
 
+
 public class Human {
 
         private String name;
@@ -17,7 +18,7 @@ public class Human {
         }
 
         public void describePet () {
-            System.out.println("I have a "  + pet.getSpecies() + ", he is " + pet.getAge() + " years old, he is very sly.");
+            System.out.println("I have a "  + pet.getSpecies() + ", he is " + pet.getAge() + " years old, he is " + ((pet.getTrickLevel()>50)?"Very sly":"almost not sly"));
         }
 
 
@@ -35,6 +36,13 @@ public class Human {
 
     public short getIq() {
         return iq;
+    }
+
+
+
+
+    public String toString () {
+            return "Human{ name= " + getName() + ", surname= " + getSurname() + ", year= " + getYear() + ", iq= " + getIq() + ", mother= " + mother + ", father= " + father + "pet= " + pet.toString() + "}";
     }
 
 
