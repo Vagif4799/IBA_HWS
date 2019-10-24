@@ -8,8 +8,8 @@ public class Human {
         private int year;
         private short iq;
         Pet pet = new Pet();
-        Human mother = new Human();
-        Human father = new Human();
+        Human mother = new Human("jack", "jazzy", 34);
+        Human father = new Human("angel", "merkel", 54);
         String[][] schedule = new String[7][2];
 
 
@@ -79,9 +79,11 @@ public class Human {
     public static void main(String[] args) {
             Human tom = new Human("Tom", "Tommy", 25);
             Human jerry = new Human("Jerry", "Freaky", 20);
-            Human Berry = new Human("Berry", "Black", 2);
+            Human berry = new Human("Berry", "Black", 2);
 
         System.out.println(tom.getName());
+        System.out.println(jerry.getName());
+        System.out.println(berry.getName());
     }
 
 
