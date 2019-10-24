@@ -84,6 +84,7 @@ public class Human {
         System.out.println(tom.getName());
         System.out.println(jerry.getName());
         System.out.println(berry.getName());
+        System.out.println(tom.toString());
     }
 
 
