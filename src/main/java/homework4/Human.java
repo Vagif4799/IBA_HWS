@@ -8,8 +8,8 @@ public class Human {
         private int year;
         private short iq;
         Pet pet = new Pet();
-        Human mother = new Human("jack", "jazzy", 34);
-        Human father = new Human("angel", "merkel", 54);
+        Human mother;
+        Human father;
         String[][] schedule = new String[7][2];
 
 
