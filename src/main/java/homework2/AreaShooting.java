@@ -43,7 +43,6 @@ public class AreaShooting {
         int randomRow = (int)(Math.random()*5);
         int randomColumn = (int)(Math.random()*5);
 
-        System.out.println("Random raw and Column are: " + randomRow + " and " + randomColumn);
 
         int userRow;
         int userColumn;
@@ -57,7 +56,6 @@ public class AreaShooting {
 
             if(randomRow == userRow && randomColumn == userColumn) {
                 arr[userRow-1][userColumn-1] = "x";
-                System.out.println("Congrats " + name);
                 break;
             } else if (randomRow != userRow || randomColumn != userColumn){
                 arr[userRow-1][userColumn-1] = "*";
@@ -71,6 +69,16 @@ public class AreaShooting {
             }
 
         }
+
+        for (int i=0; i<arr.length; i++){
+            for (int j=0; j<arr.length; j++){
+                System.out.print(arr[i][j] + " |");
+            }
+            System.out.println();
+        }
+
+        System.out.println("Congrats " + name);
+
 
     }
 
