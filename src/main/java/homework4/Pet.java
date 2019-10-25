@@ -5,18 +5,18 @@ public class Pet {
     private String species;
     private String nickname;
     private int age;
-    private short trickLevel;
+    private int trickLevel;
     private String[] habits = new String[100];
 
-    public void eat () {
+    public void eat() {
         System.out.println("I am eating");
     }
 
-    public void respond () {
+    public void respond() {
         System.out.println("Hello owner. I am " + this.nickname + " I miss you!");
     }
 
-    public void foul () {
+    public void foul() {
         System.out.println("I need to cover it up.");
     }
 
@@ -32,7 +32,7 @@ public class Pet {
         return age;
     }
 
-    public short getTrickLevel() {
+    public int getTrickLevel() {
         return trickLevel;
     }
 
@@ -46,9 +46,10 @@ public class Pet {
     }
 
 
-    public Pet(String species, String nickname) {
+    public Pet(String species, String nickname, int trickLevel) {
         this.species = species;
         this.nickname = nickname;
+        this.trickLevel = trickLevel;
     }
 
 
@@ -60,10 +61,9 @@ public class Pet {
         this.habits = habits;
     }
 
-    public Pet () {
+    public Pet() {
         // empty constructor
     }
-
 
 
 }
