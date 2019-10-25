@@ -17,6 +17,8 @@ public class Family {
         System.out.println(tom.toString());
 
         tom.feedPet(false);
+        jerry.feedPet(true);
+        berry.feedPet(false);
 
     }
 

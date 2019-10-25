@@ -29,11 +29,9 @@ public class Human {
         } else {
             int currentPetMood = (int) (Math.random() * 100);
             if (pet.getTrickLevel() > currentPetMood) {
-                System.out.printf("Hm... I will feed %s\n", pet.getNickname());
-                System.out.println(currentPetMood);
+                System.out.printf("Hm... I will feed %s.\n", pet.getNickname());
             } else if (pet.getTrickLevel() < currentPetMood) {
                 System.out.printf("I think %s is not hungry.\n", pet.getNickname());
-                System.out.println(currentPetMood);
             }
         }
 
