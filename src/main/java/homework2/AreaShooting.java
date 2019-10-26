@@ -43,6 +43,8 @@ public class AreaShooting {
         int randomRow = (int)(Math.random()*5);
         int randomColumn = (int)(Math.random()*5);
 
+        System.out.println(randomRow + " " + randomColumn);
+
 
         int userRow;
         int userColumn;
