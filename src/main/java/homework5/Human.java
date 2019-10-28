@@ -10,38 +10,39 @@ public class Human {
     private int year;
     private short iq;
     private String[][] schedule = new String[7][2];
-    private Pet pet;
+    private Family family;
 
-
-    public void greetPet() {
-        System.out.println("Hello, " + pet.getNickname());
+    public void welcomeTheFavorite() {
+        System.out.println("Hello, " + family.getPet().getNickname());
     }
 
-    public void describePet() {
-        System.out.println("I have a " + pet.getSpecies() + ", he is " + pet.getAge() + " years old, he is " + ((pet.getTrickLevel() > 50) ? "Very sly" : "almost not sly"));
+    public void describeTheFavourite() {
+        System.out.println("I have a " + family.getPet().getSpecies() + ", he is " + family.getPet().getAge() + " years old, he is " + ((family.getPet().getTrickLevel() > 50) ? "Very sly" : "almost not sly"));
     }
 
-    public void feedPet(boolean isTime) {
+    public void feed(boolean isTime) {
 
         if (isTime) {
             System.out.println("feed the pet, it is time...");
         } else {
             int currentPetMood = (int) (Math.random() * 100);
-            if (pet.getTrickLevel() > currentPetMood) {
-                System.out.printf("Hm... I will feed %s.\n", pet.getNickname());
-            } else if (pet.getTrickLevel() < currentPetMood) {
-                System.out.printf("I think %s is not hungry.\n", pet.getNickname());
+            if (family.getPet().getTrickLevel() > currentPetMood) {
+                System.out.printf("Hm... I will feed %s.\n", family.getPet().getNickname());
+            } else if (family.getPet().getTrickLevel() < currentPetMood) {
+                System.out.printf("I think %s is not hungry.\n", family.getPet().getNickname());
             }
         }
 
     }
 
 
-    public Human(String name, String surname, int year, Pet dog) {
+    public Human(String name, String surname, int year, short iq, String[][] schedule, Family family) {
         this.name = name;
         this.surname = surname;
         this.year = year;
-        this.pet = dog;
+        this.iq = iq;
+        this.schedule = schedule;
+        this.family = family;
     }
 
     public Human(String name, String surname, int year) {
@@ -50,14 +51,6 @@ public class Human {
         this.year = year;
     }
 
-    public Human(String name, String surname, int year, short iq, Pet pet, String[][] schedule) {
-        this.name = name;
-        this.surname = surname;
-        this.year = year;
-        this.iq = iq;
-        this.pet = pet;
-        this.schedule = schedule;
-    }
 
     public Human() {
         // empty constructor
@@ -85,8 +78,8 @@ public class Human {
         return schedule;
     }
 
-    public Pet getPet() {
-        return pet;
+    public Family getFamily() {
+        return family;
     }
 
     public void setName(String name) {
@@ -109,8 +102,8 @@ public class Human {
         this.schedule = schedule;
     }
 
-    public void setPet(Pet pet) {
-        this.pet = pet;
+    public void setFamily(Family family) {
+        this.family = family;
     }
 
     @Override
@@ -121,7 +114,6 @@ public class Human {
                 ", year=" + year +
                 ", iq=" + iq +
                 ", schedule=" + Arrays.toString(schedule) +
-                ", pet=" + pet +
                 '}';
     }
 }

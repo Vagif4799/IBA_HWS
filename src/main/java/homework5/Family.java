@@ -1,5 +1,6 @@
 package homework5;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Family {
@@ -7,13 +8,22 @@ public class Family {
     private Human mother;
     private Human father;
     private Human[] children;
+    private Pet pet;
 
-
-    public Family(Human mother, Human father) {
-        this.mother = mother;
-        this.father = father;
+    public void addChild (Human child) {
+        children[children.length+1] = child;
     }
 
+    public Family() {
+        // empty
+    }
+
+
+    public Family(Human mother, Human father, Human[] children) {
+        this.mother = mother;
+        this.father = father;
+        this.children = children;
+    }
 
     public Human getMother() {
         return mother;
@@ -26,6 +36,11 @@ public class Family {
     public Human[] getChildren() {
         return children;
     }
+
+    public Pet getPet() {
+        return pet;
+    }
+
 
 
     public void setMother(Human mother) {
@@ -40,7 +55,9 @@ public class Family {
         this.children = children;
     }
 
-
+    public void setPet(Pet pet) {
+        this.pet = pet;
+    }
 
 
     @Override
@@ -49,6 +66,7 @@ public class Family {
                 "mother=" + mother +
                 ", father=" + father +
                 ", children=" + Arrays.toString(children) +
+                ", pet=" + pet +
                 '}';
     }
 }
