@@ -1,5 +1,7 @@
 package homework5;
 
+import java.util.Objects;
+
 public class Pet {
 
 
@@ -69,5 +71,18 @@ public class Pet {
         return getSpecies() + "{nickname= " + getNickname() + ", age= " + getAge() + ", trickLevel= " + getTrickLevel() + ", habits= " + getHabits() + "}";
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Pet)) return false;
+        Pet pet = (Pet) o;
+        return Objects.equals(getSpecies(), pet.getSpecies()) &&
+                Objects.equals(getNickname(), pet.getNickname());
+    }
 
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(getSpecies(), getNickname());
+    }
 }

@@ -1,6 +1,7 @@
 package homework5;
 
 import java.util.Arrays;
+import java.util.Objects;
 
 public class Human {
 
@@ -9,7 +10,7 @@ public class Human {
     private String surname;
     private int year;
     private short iq;
-    private String[][] schedule = new String[7][2];
+    private schedule schedule;
     private Family family;
 
     public void welcomeTheFavorite() {
@@ -36,7 +37,7 @@ public class Human {
     }
 
 
-    public Human(String name, String surname, int year, short iq, String[][] schedule, Family family) {
+    public Human(String name, String surname, int year, short iq, homework5.schedule schedule, Family family) {
         this.name = name;
         this.surname = surname;
         this.year = year;
@@ -74,7 +75,7 @@ public class Human {
         return iq;
     }
 
-    public String[][] getSchedule() {
+    public homework5.schedule getSchedule() {
         return schedule;
     }
 
@@ -98,12 +99,29 @@ public class Human {
         this.iq = iq;
     }
 
-    public void setSchedule(String[][] schedule) {
+    public void setSchedule(homework5.schedule schedule) {
         this.schedule = schedule;
     }
 
     public void setFamily(Family family) {
         this.family = family;
+    }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Human)) return false;
+        Human human = (Human) o;
+        return getYear() == human.getYear() &&
+                Objects.equals(getName(), human.getName()) &&
+                Objects.equals(getSurname(), human.getSurname());
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(getName(), getSurname(), getYear());
     }
 
     @Override
@@ -113,7 +131,8 @@ public class Human {
                 ", surname='" + surname + '\'' +
                 ", year=" + year +
                 ", iq=" + iq +
-                ", schedule=" + Arrays.toString(schedule) +
+                ", schedule=" + schedule +
+                ", family=" + family +
                 '}';
     }
 }
