@@ -20,6 +20,7 @@ public class FamilyApp {
         System.out.print("Number of family members: ");
         System.out.println(family.countFamily(family));
         family.deleteChild(0);
+        System.out.println(family.countFamily(family));
 
         System.out.println(family.toString());
 

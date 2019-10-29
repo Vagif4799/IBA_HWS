@@ -28,7 +28,7 @@ public class Family {
 
     public void deleteChild (int i) {
         if (children != null) {
-            Human[] deti = new Human[children.length];
+            Human[] deti = new Human[children.length-1];
             for (int j = 0; j < children.length; j++) {
                 if (j < i) {
                     deti[j] = children[j];
