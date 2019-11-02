@@ -51,6 +51,13 @@ public class Human {
     }
 
 
+    public Human(String name, String surname, int year, Schedule schedule) {
+        this.name = name;
+        this.surname = surname;
+        this.year = year;
+        this.schedule = schedule;
+    }
+
     public Human() {
         // empty constructor
         super();
