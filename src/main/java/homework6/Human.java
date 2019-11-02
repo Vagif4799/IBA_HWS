@@ -11,28 +11,7 @@ public class Human {
     private Schedule schedule;
     private Family family;
 
-    public void welcomeTheFavorite() {
-        System.out.println("Hello, " + family.getPet().getNickname());
-    }
 
-    public void describeTheFavourite() {
-        System.out.println("I have a " + family.getPet().getSpecies() + ", he is " + family.getPet().getAge() + " years old, he is " + ((family.getPet().getTrickLevel() > 50) ? "Very sly" : "almost not sly"));
-    }
-
-    public void feed(boolean isTime) {
-
-        if (isTime) {
-            System.out.println("feed the pet, it is time...");
-        } else {
-            int currentPetMood = (int) (Math.random() * 100);
-            if (family.getPet().getTrickLevel() > currentPetMood) {
-                System.out.printf("Hm... I will feed %s.\n", family.getPet().getNickname());
-            } else if (family.getPet().getTrickLevel() < currentPetMood) {
-                System.out.printf("I think %s is not hungry.\n", family.getPet().getNickname());
-            }
-        }
-
-    }
 
 
     public Human(String name, String surname, int year, short iq, Schedule schedule, Family family) {
@@ -63,6 +42,33 @@ public class Human {
         super();
         System.out.println("This object reference is located on the heap at: " + this);
     }
+
+
+
+    public void welcomeTheFavorite() {
+        System.out.println("Hello, " + family.getPet().getNickname());
+    }
+
+    public void describeTheFavourite() {
+        System.out.println("I have a " + family.getPet().getSpecies() + ", he is " + family.getPet().getAge() + " years old, he is " + ((family.getPet().getTrickLevel() > 50) ? "Very sly" : "almost not sly"));
+    }
+
+    public void feed(boolean isTime) {
+
+        if (isTime) {
+            System.out.println("feed the pet, it is time...");
+        } else {
+            int currentPetMood = (int) (Math.random() * 100);
+            if (family.getPet().getTrickLevel() > currentPetMood) {
+                System.out.printf("Hm... I will feed %s.\n", family.getPet().getNickname());
+            } else if (family.getPet().getTrickLevel() < currentPetMood) {
+                System.out.printf("I think %s is not hungry.\n", family.getPet().getNickname());
+            }
+        }
+
+    }
+
+
 
     public String getName() {
         return name;

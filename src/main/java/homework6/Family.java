@@ -9,6 +9,23 @@ public class Family {
     private Human[] children;
     private Pet pet;
 
+
+
+
+
+    public Family() {
+        // empty
+    }
+
+
+    public Family(Human mother, Human father, Human[] children) {
+        this.mother = mother;
+        this.father = father;
+        this.children = children;
+    }
+
+
+
     public void addChild (Human child) {
         if (children != null) {
             Human[] deti = new Human[children.length + 1];
@@ -52,18 +69,6 @@ public class Family {
         return count;
     }
 
-
-
-    public Family() {
-        // empty
-    }
-
-
-    public Family(Human mother, Human father, Human[] children) {
-        this.mother = mother;
-        this.father = father;
-        this.children = children;
-    }
 
     public Human getMother() {
         return mother;

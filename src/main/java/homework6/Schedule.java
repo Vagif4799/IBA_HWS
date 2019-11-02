@@ -17,6 +17,7 @@ public class Schedule {
         this.table = table;
     }
 
+
     @Override
     public String toString() {
         return "Schedule{" +

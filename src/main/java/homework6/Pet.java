@@ -18,17 +18,6 @@ public class Pet {
     private int trickLevel;
     private String[] habits = new String[100];
 
-    public void eat() {
-        System.out.println("I am eating");
-    }
-
-    public void respond() {
-        System.out.println("Hello owner. I am " + this.nickname + " I miss you!");
-    }
-
-    public void foul() {
-        System.out.println("I need to cover it up.");
-    }
 
 
     public Pet(Species species, String nickname, int trickLevel) {
@@ -51,6 +40,21 @@ public class Pet {
 
 
     }
+
+
+
+    public void eat() {
+        System.out.println("I am eating");
+    }
+
+    public void respond() {
+        System.out.println("Hello owner. I am " + this.nickname + " I miss you!");
+    }
+
+    public void foul() {
+        System.out.println("I need to cover it up.");
+    }
+
 
 
     public Species getSpecies() {
