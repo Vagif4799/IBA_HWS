@@ -5,6 +5,9 @@ import homework10.Controllers.FamilyController;
 import homework10.dao.DAO;
 import homework10.dao.FamilyDAO;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.Month;
 import java.util.Optional;
 
 public class FamilyApp {
@@ -23,10 +26,12 @@ public class FamilyApp {
 //        familyDao.deleteById(1);
 //        System.out.println(familyDao.getAll());
 
+        LocalDate birthDate = LocalDate.of(1961, 5, 17);
+        LocalDate birthDate1 = LocalDate.of(1971, 5, 17);
 
 
-        Human angeline = new Human("Angel", "July", 1974);
-        Human brad = new Human("Brad", "Pit", 1964);
+        Human angeline = new Human("Angel", "July", birthDate);
+        Human brad = new Human("Brad", "Pit", birthDate1);
         familyController.displayAllFamilies();
         familyController.deleteFamilyByIndex(1);
         familyController.displayAllFamilies();

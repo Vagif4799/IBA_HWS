@@ -5,6 +5,7 @@ import homework10.Application.Human;
 import homework10.Application.Pet;
 import homework10.dao.FamilyDAO;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Set;
 
@@ -46,12 +47,14 @@ public class FamilyService extends FamilyDAO {
 
     public Family bornChild (Family family, String gender) {
         String surname = family.getFather().getSurname();
+        LocalDate birthDate = LocalDate.of(2005, 5, 17);
+        LocalDate birthDate1 = LocalDate.of(2010, 5, 17);
 
         if (gender == "masculine") {
-            Human jack = new Human("Jack",surname , 2019);
+            Human jack = new Human("Jack",surname , birthDate);
             family.addChild(jack);
         } else {
-            Human jessy = new Human("Jessy", surname, 2019);
+            Human jessy = new Human("Jessy", surname, birthDate1);
             family.addChild(jessy);
         }
         return family;
